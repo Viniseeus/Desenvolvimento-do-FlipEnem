@@ -6,13 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="icon.png">
     <link rel ="stylesheet" type ="text/css" href ="estilos.css">
+
+    
     <title>FlipEnem</title>
+
 </head>
-<body>
-    <?php
-       
-    ?>
- 
+<body> 
     <div class="cabecalho">
         <div class="logo"><h1>Flip Enem</h1></a></div>
     </div>
@@ -20,11 +19,11 @@
     <div class="container">
           <div class="esquerda">
              <ul>
-                 <li><a href="">Meu Perfil</a></li>
-                 <li><a href="">Feedbacks</a></li>
-                 <li><a href="">Sobre o projeto</a></li>
-                 <li><a href="">Histórico</a></li>
-                 <li><a href="">Configurações</a></li>
+                 <li><a href="my.php">Meu Perfil</a></li>
+                 <li><a href="feed.php">Feedbacks</a></li>
+                 <li><a href="sobreprojeto.php">Sobre o projeto</a></li>
+                 <li><a href="historico.php">Histórico</a></li>
+                 <li><a href="config.php">Configurações</a></li>
             </ul>
           </div>
          
@@ -37,8 +36,8 @@
           <div class="direita">
             <div class="quadroranking">
                 <h1>Ranking de acertos</h1>
-                <p>Vinicius Vefago 10/0</p>
-                <p>Vinicius Leandro 5/10</p>
+                <p>Vinicius Vefago 10/10</p>
+                <p>Vinicius Leandro 10/10</p>
             </div>
           </div>
      </div> <!--Fechamento da classe container-->
