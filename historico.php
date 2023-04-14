@@ -9,8 +9,8 @@
     <title>Histórico de Usuario</title>
 </head>
 <body>
-    
-<div class="esquerda">
+    <div class="container">
+        <div class="esquerda">
              <ul>
                  <li><a href="index.php">Voltar</a></li>
                  <li><a href="my.php">Meu Perfil</a></li>
@@ -21,5 +21,6 @@
                  
             </ul>
           </div>
+    </div>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <?php
 $servername = "localhost"; //nome do servidor
-$username = "root"; //nome do usuário
+$username = "TCC"; //nome do usuário
 $password = ""; //senha
 $dbname = "FlipEnem"; //nome do banco de dados
 

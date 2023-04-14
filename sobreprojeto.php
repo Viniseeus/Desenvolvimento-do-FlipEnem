@@ -9,12 +9,7 @@
     <title>Projeto FlipEnem </title>
 </head>
 <body>
-    <div class="projeto">
-        <div>
-            <h1>História do projeto FlipEnem </h1>
-        </div>
-    </div>  
-
+    <div class="container">
     <div class="esquerda">
              <ul>
                  <li><a href="index.php">Voltar</a></li>
@@ -25,6 +20,13 @@
                  
             </ul>
           </div>
-
+    <div class="centro">
+    <div class="projeto">
+        <div>
+            <h1>História do projeto FlipEnem </h1>
+        </div>
+    </div>  
+</div>
+</div>
 </body>
 </html>

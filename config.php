@@ -9,16 +9,17 @@
     <title>Configurações</title>
 </head>
 <body>
-<div class="esquerda">
+    <div class="container">
+        <div class="esquerda">
              <ul>
                  <li><a href="index.php">Voltar</a></li>
                  <li><a href="my.php">Meu Perfil</a></li>
                  <li><a href="feed.php">Feedbacks</a></li>
                  <li><a href="sobreprojeto.php">Sobre o projeto</a></li>
-                 <li><a href="historico.php">Histórico</a></li>
-                 
+                 <li><a href="historico.php">Histórico</a></li>          
             </ul>
           </div>
+    </div>
     
 </body>
 </html>
