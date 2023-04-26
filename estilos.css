@@ -35,6 +35,12 @@
     background-color: rgb(226, 219, 210);   
 }
 
+.col-4 {
+    width: 20%;
+    background-color: rgb(226, 219, 210);   
+}
+
+
 .direita{
     width: 15%;
     background-color:  rgb(226, 219, 210);
