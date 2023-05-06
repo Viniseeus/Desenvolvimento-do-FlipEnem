@@ -71,12 +71,6 @@
             <label for="idade">Idade</label>
             <input type="number" id="idade" name="idade" required>
             
-            <label for="sexo">Sexo</label>
-            <select id="sexo" name="sexo" required>
-                <option value="masculino">Masculino</option>
-                <option value="feminino">Feminino</option>
-                <option value="outro">Outro</option>
-            </select>
             
             <input type="submit" value="Enviar">
         </form>

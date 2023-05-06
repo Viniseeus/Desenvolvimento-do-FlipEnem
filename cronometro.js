@@ -6,13 +6,17 @@ function startTimer(duration, display) {
         minutes = minutes < 10 ? "0" + minutes : minutes;
         seconds = seconds < 10 ? "0" + seconds : seconds;
         display.textContent = minutes + ":" + seconds;
-        if (--timer < 0) {
+        if (timer == 0) {
+            alert('encerrou o tempo')
+            window.location.href="index.php";
+        }
+                if (--timer < 0) {
             timer = duration;
         }
     }, 1000);
 }
 window.onload = function () {
-    var duration = 60 ; // Converter para segundos
+    var duration = 1000 ; // Converter para segundos
         display = document.querySelector('#timer'); // selecionando o timer
     startTimer(duration, display); // iniciando o timer
 };

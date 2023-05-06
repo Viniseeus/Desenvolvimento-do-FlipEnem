@@ -1,5 +1,14 @@
 <!DOCTYPE html>
 <html>
+<?php
+// Conecta ao banco de dados
+//   $conn = new mysqli($servername, $username, $password, $dbname);
+include('conexao.php');
+// Verifica se a conexão foi bem-sucedida
+if ($conn->connect_error) {
+    die("Falha na conexão com o banco de dados: " . $conn->connect_error);
+}
+?>
 
 <head>
     <title>Cadastro</title>
@@ -14,25 +23,26 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
     <style>
-            h1 {
-                text-align: center;
-                padding: 10px;
-            }
+        h1 {
+            text-align: center;
+            padding: 10px;
+        }
 
-            h2 {
-                text-align: center;
-                padding: 10px;
-            }
+        h2 {
+            text-align: center;
+            padding: 10px;
+        }
 
-            .label-bg {
-                background-color: #ADD8E6;
-                padding: 5px;
-            }
+        .label-bg {
+            background-color: #ADD8E6;
+            padding: 5px;
+        }
 
-            body {
-                background-color: gray;
-            }
-        </style>
+        body {
+            background-color: gray;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -61,20 +71,33 @@
     </div>
 
     <div class="container mt-3">
-    <h2 class="text-danger"> Coloque o maximo de informações!!</h2> 
-    <br>
-    <br>
+        <h2 class="text-danger"> Coloque o maximo de informações!!</h2>
+        <br>
+        <br>
     </div>
 
     <div class="container">
 
- 
 
-        <form action="cadastro.php" method="post" enctype="multipart/form-data">
+
+        <form action="cadastroperguntas.php" method="post" enctype="multipart/form-data">
 
             <div class="form-group">
-                <label for="data" class="label-bg">Data da questão:</label>
-                <input type="date" class="form-control" id="anoquest" name="anoquest">
+                <select name="tccflipenem">
+                    <option>Selecione</option>
+                    <?php
+                    $query = "SELECT * FROM areaconhe";
+                    $result = $conn->query($query);
+                    while ($row = $result->fetch_array()) {
+                        echo '<option value="' . $row['idarea'] . '">' . $row['descArea'] . '</option>';
+                    }
+                    ?>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="data" class="label-bg">Ano da questão:</label>
+                <input type="number" min="2000" max="2022" placeholder="EX.:2020" class="form-control" id="anoquest" name="anoquest">
             </div>
 
             <div class="form-group">
@@ -83,44 +106,44 @@
             </div>
 
             <div class="form-group">
-                <label for="pergunta1" class="label-bg">Pergunta 1:</label>
+                <label for="pergunta1" class="label-bg">Resposta 1:</label>
                 <input type="text" class="form-control" id="pergunta1" name="pergunta1">
             </div>
 
             <div class="form-group">
-                <label for="pergunta2" class="label-bg">Pergunta 2:</label>
+                <label for="pergunta2" class="label-bg">Resposta 2:</label>
                 <input type="text" class="form-control" id="pergunta2" name="pergunta2">
             </div>
 
             <div class="form-group">
-                <label for="pergunta3" class="label-bg">Pergunta 3:</label>
+                <label for="pergunta3" class="label-bg">Resposta 3:</label>
                 <input type="text" class="form-control" id="pergunta3" name="pergunta3">
             </div>
 
             <div class="form-group">
-                <label for="pergunta4" class="label-bg">Pergunta 4:</label>
+                <label for="pergunta4" class="label-bg">Resposta 4:</label>
                 <input type="text" class="form-control" id="pergunta4" name="pergunta4">
             </div>
 
             <div class="form-group">
-                <label for="pergunta5" class="label-bg">Pergunta 5:</label>
+                <label for="pergunta5" class="label-bg">Resposta 5:</label>
                 <input type="text" class="form-control" id="pergunta5" name="pergunta5">
             </div>
 
             <div class="form-group">
-                <label for="resposta" class="label-bg">Qual das perguntas está correta?</label>
+                <label for="resposta" class="label-bg">Qual das respostas está correta?</label>
                 <select class="form-control" id="resposta" name="resposta">
-                    <option value="1">Pergunta 1</option>
-                    <option value="2">Pergunta 2</option>
-                    <option value="3">Pergunta 3</option>
-                    <option value="4">Pergunta 4</option>
-                    <option value="5">Pergunta 5</option>
+                    <option value="1">Resposta 1</option>
+                    <option value="2">Resposta 2</option>
+                    <option value="3">Resposta 3</option>
+                    <option value="4">Resposta 4</option>
+                    <option value="5">Resposta 5</option>
                 </select>
             </div>
 
             <div class="form-group">
                 <label for="imagem" class="label-bg">Imagem:</label>
-                <input type="file" class="form-control-file" id="imagem" name="imagem">
+                <input type="file" value="null" class="form-control-file" id="imagem" name="img">
             </div>
 
             <div class="form-group">
@@ -130,62 +153,54 @@
             </div>
 
             <div class="form-group">
-                <label for="observacoes" class="label-bg">Observações:</label>
-                <textarea class="form-control" id="observacoes" name="observacoes" rows="5"></textarea>
+                <label for="observacao" class="label-bg">Observações:</label>
+                <textarea class="form-control" id="observacao" name="observacao" rows="5"></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
+
+
+            <button type="submit" name="btnCadastrar" class="btn btn-primary">Cadastrar</button>
             <button type="submit" class="btn btn-danger">Cancelar</button>
         </form>
     </div>
 
 
     <?php
-    // Conecta ao banco de dados
-    $servername = "localhost:3307";
-    $username = "root";
-    $password = "TheSuperMario64";
-    $dbname = "tccflipenem";
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    if (isset($_POST['btnCadastrar'])) {
 
-    // Verifica se a conexão foi bem-sucedida
-    if ($conn->connect_error) {
-        die("Falha na conexão com o banco de dados: " . $conn->connect_error);
+        // Processa os dados do formulário.
+        // As variaveis perguntas vem das colunas Resposta1,2,3,4 e 5.
+        $enunciado = $_POST["enunciado"];
+        $pergunta1 = $_POST["pergunta1"];
+        $pergunta2 = $_POST["pergunta2"];
+        $pergunta3 = $_POST["pergunta3"];
+        $pergunta4 = $_POST["pergunta4"];
+        $pergunta5 = $_POST["pergunta5"];
+        $resposta = $_POST["resposta"];
+        $data = $_POST["anoquest"];
+        $imagem = $_FILES["img"]["name"];
+        $fonte = $_POST["fonte"];
+        $observacao = $_POST["observacao"];
+
+        // Faz o upload da imagem
+        $target_dir = "uploads/";
+        $target_file = $target_dir . basename($_FILES["img"]["name"]);
+        move_uploaded_file($_FILES["img"]["tmp_name"], $target_file);
+
+        // Insere os dados no banco de dados
+        $sql = "INSERT INTO questao (enunciado, quest1, quest2, quest3, quest4, quest5, resultado, anoquest, img, fonte, observacao)
+VALUES ('$enunciado', '$pergunta1', '$pergunta2', '$pergunta3', '$pergunta4', '$pergunta5', '$resposta', '$data', '$imagem', '$fonte', '$observacao')";
+
+        if ($conn->query($sql) === TRUE) {
+            echo "Dados inseridos com sucesso";
+        } else {
+            echo "Erro ao inserir dados: " . $conn->error;
+        }
+
+        // Fecha a conexão com o banco de dados
+        $conn->close();
     }
-
-    // Processa os dados do formulário
-    $enunciado = $_POST["enunciado"];
-    $pergunta1 = $_POST["quest1"];
-    $pergunta2 = $_POST["quest2"];
-    $pergunta3 = $_POST["quest3"];
-    $pergunta4 = $_POST["quest4"];
-    $pergunta5 = $_POST["quest5"];
-    $resposta = $_POST["resultado"];
-    $data = $_POST["anoqeust"];
-    $imagem = $_FILES["img"]["name"];
-    $fonte = $_POST["fonte"];
-    $observacoes = $_POST["observacoes"];
-
-    // Faz o upload da imagem
-    $target_dir = "uploads/";
-    $target_file = $target_dir . basename($_FILES["img"]["name"]);
-    move_uploaded_file($_FILES["img"]["tmp_name"], $target_file);
-
-    // Insere os dados no banco de dados
-    $sql = "INSERT INTO formulario (enunciado, quest1, quest2, quest3, quest4, quest5, resultado, dataquest, img, fonte, observacoes)
-VALUES ('$enunciado', '$pergunta1', '$pergunta2', '$pergunta3', '$pergunta4', '$pergunta5', '$resposta', '$data', '$imagem', '$fonte', '$observacoes')";
-
-    if ($conn->query($sql) === TRUE) {
-        echo "Dados inseridos com sucesso";
-    } else {
-        echo "Erro ao inserir dados: " . $conn->error;
-    }
-
-    // Fecha a conexão com o banco de dados
-    $conn->close();
     ?>
-
-
 </body>
 
 </html>

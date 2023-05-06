@@ -24,6 +24,10 @@
         .texto-destaque {
             font-weight: bold;
         }
+
+        .nav-item {
+            padding-left: 10px;
+        }
     </style>
 
 
@@ -31,17 +35,24 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="esquerda">
-            <ul>
-                <li><a href="index.php">Voltar</a></li>
-                <li><a href="feed.php">Feedbacks</a></li>
-                <li><a href="sobreprojeto.php">Sobre o projeto</a></li>
-                <li><a href="historico.php">Histórico</a></li>
-                <li><a href="config.php">Configurações</a></li>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Meu perfil</a>
+        <button class="navbar-toggler ms-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a href="index.php"  style="text-decoration:none;color:#000000">Voltar</a></li>
+                <li class="nav-item"><a href="feed.php"  style="text-decoration:none;color:#000000">Feedback</a></li>
+                <li class="nav-item"><a href="sobreprojeto.php"  style="text-decoration:none;color:#000000">Sobre o projeto</a></li>
+                <li class="nav-item"><a href="historico.php"  style="text-decoration:none;color:#000000">Histórico</a></li>
+                <li class="nav-item"><a href="config.php" style="text-decoration:none;color:#000000">Configurações</a></li>
+
             </ul>
         </div>
-
+    </nav>
 
         <div class="container">
       <div class="row">
