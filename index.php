@@ -16,32 +16,31 @@
 </head>
 
 <body>
-    <div class="cabecalho">
-        <div class="logo">
-            <h1>Flip Enem</h1></a>
-        </div>
-    </div>
-    
-
-
     <div class="container-fluid">
-        <div class="row">
-            <div class="esquerda">
-                <ul>
+        <div class= row>
+            <div class="col-8  cabecalho "><h1 class="logo">Flip Enem</h1></div>
+            <div class="col-4 cabecalho">
+                <nav><ul>
                     <li><a href="my.php">Meu Perfil</a></li>
                     <li><a href="feed.php">Feedbacks</a></li>
                     <li><a href="sobreprojeto.php">Sobre o projeto</a></li>
                     <li><a href="historico.php">Histórico</a></li>
                     <li><a href="config.php">Configurações</a></li>
-                </ul>
+                </ul></nav>
+            </div>
+      
+        </div>
+        <div class="row">
+            <div class="col-2 esquerda">
+              
 
             </div>
-            <div class="col p-2">
+            <div class="col-8 centro ">
                 <a href="Cronometragem.php">
                     <button class="comecar">Jogar</button>
                 </a>
             </div>
-            <div class="col p-2" style="background-color: green;">
+            <div class="col-2 direita">
                 <h1>Ranking de acertos</h1>
                 <p>Vinicius Vefago 10/10</p>
                 <p>Vinicius Leandro 10/10</p>
