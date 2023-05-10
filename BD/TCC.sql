@@ -1,1 +1,0 @@
-1SELECT * FROM tccflipenem.questao;
