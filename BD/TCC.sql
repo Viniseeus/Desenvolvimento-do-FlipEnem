@@ -1,1 +1,1 @@
-1SELECT * FROM tccflipenem.questao;
+SELECT * FROM tccflipenem.questao;
