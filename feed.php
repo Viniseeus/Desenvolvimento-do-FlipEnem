@@ -39,12 +39,12 @@
     
     <div class="container-fluid">
     <div class="row">
-            <div class="col-1 lateral"></div>
-                <div class="col-10 centro">
+            <div class="col-1 col-sm-1 lateral"></div>
+                <div class="col-10 com-sm-10 centro">
                      <h1>Feedback</h1>
                      <p>Dúvidas, reclamações, agradecimentos ou dicas de aprimoramentos serão bem vindas ! </p>
                 <div class="row">
-                    <div class="col-12 principal">
+                    <div class="col-12 col-sm-12 principal">
                     Deixe seu feed: <input type="text-area"> 
                     <input type="submit" value="Enviar">
                     <a href="index.php">
@@ -53,7 +53,7 @@
                     </div>
                 </div>
                 </div>   
-            <div class="col-1 lateral"></div>           
+            <div class="col-1 col-sm-1 lateral"></div>           
     </div>
     </div>
 </body>
