@@ -18,8 +18,8 @@
 <body>
     <div class="container-fluid">
         <div class= row>
-            <div class="col-8  cabecalho "><h1 class="logo">Flip Enem</h1></div>
-            <div class="col-4 cabecalho">
+            <div class="col-6  cabecalho "><h1 class="logo">Flip Enem</h1></div>
+            <div class="col-6 cabecalho">
                 <nav><ul>
                     <li><a href="my.php">Meu Perfil</a></li>
                     <li><a href="feed.php">Feedbacks</a></li>

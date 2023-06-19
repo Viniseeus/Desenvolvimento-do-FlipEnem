@@ -16,7 +16,7 @@ function startTimer(duration, display) {
     }, 1000);
 }
 window.onload = function () {
-    var duration = 1000 ; // Converter para segundos
+    var duration = 180 ; // Converter para segundos
         display = document.querySelector('#timer'); // selecionando o timer
     startTimer(duration, display); // iniciando o timer
 };

@@ -80,7 +80,7 @@ if ($conn->connect_error) {
 
 
 
-        <form action="cadastroperguntas.php" method="post" enctype="multipart/form-data">
+        <form action="cadastroperguntas.php" method="Post" enctype="multipart/form-data">
 
             <div class="form-group">
                 <select name="tccflipenem">
@@ -106,33 +106,38 @@ if ($conn->connect_error) {
             </div>
 
             <div class="form-group">
-                <label for="pergunta1" class="label-bg">Resposta 1:</label>
-                <input type="text" class="form-control" id="pergunta1" name="pergunta1">
+                <label for="pergunta" class="label-bg">Pergunta:</label>
+                <textarea class="form-control" rows="5" id="pergunta" name="pergunta"></textarea>
             </div>
 
             <div class="form-group">
-                <label for="pergunta2" class="label-bg">Resposta 2:</label>
-                <input type="text" class="form-control" id="pergunta2" name="pergunta2">
+                <label for="resposta1" class="label-bg">Resposta 1:</label>
+                <input type="text" class="form-control" id="resposta1" name="resposta1">
             </div>
 
             <div class="form-group">
-                <label for="pergunta3" class="label-bg">Resposta 3:</label>
-                <input type="text" class="form-control" id="pergunta3" name="pergunta3">
+                <label for="resposta2" class="label-bg">Resposta 2:</label>
+                <input type="text" class="form-control" id="resposta2" name="resposta2">
             </div>
 
             <div class="form-group">
-                <label for="pergunta4" class="label-bg">Resposta 4:</label>
-                <input type="text" class="form-control" id="pergunta4" name="pergunta4">
+                <label for="resposta3" class="label-bg">Resposta 3:</label>
+                <input type="text" class="form-control" id="resposta3" name="resposta3">
             </div>
 
             <div class="form-group">
-                <label for="pergunta5" class="label-bg">Resposta 5:</label>
-                <input type="text" class="form-control" id="pergunta5" name="pergunta5">
+                <label for="resposta4" class="label-bg">Resposta 4:</label>
+                <input type="text" class="form-control" id="resposta4" name="resposta4">
             </div>
 
             <div class="form-group">
-                <label for="resposta" class="label-bg">Qual das respostas está correta?</label>
-                <select class="form-control" id="resposta" name="resposta">
+                <label for="resposta5" class="label-bg">Resposta 5:</label>
+                <input type="text" class="form-control" id="resposta5" name="resposta5">
+            </div>
+
+            <div class="form-group">
+                <label for="correta" class="label-bg">Qual das respostas está correta?</label>
+                <select class="form-control" id="correta" name="correta">
                     <option value="1">Resposta 1</option>
                     <option value="2">Resposta 2</option>
                     <option value="3">Resposta 3</option>
@@ -171,12 +176,13 @@ if ($conn->connect_error) {
         // Processa os dados do formulário.
         // As variaveis perguntas vem das colunas Resposta1,2,3,4 e 5.
         $enunciado = $_POST["enunciado"];
-        $pergunta1 = $_POST["pergunta1"];
-        $pergunta2 = $_POST["pergunta2"];
-        $pergunta3 = $_POST["pergunta3"];
-        $pergunta4 = $_POST["pergunta4"];
-        $pergunta5 = $_POST["pergunta5"];
-        $resposta = $_POST["resposta"];
+        $pergunta = $_POST["pergunta"];
+        $resposta1 = $_POST["resposta1"];
+        $resposta2 = $_POST["resposta2"];
+        $resposta3 = $_POST["resposta3"];
+        $resposta4 = $_POST["resposta4"];
+        $resposta5 = $_POST["resposta5"];
+        $correta = $_POST["correta"];
         $data = $_POST["anoquest"];
         $imagem = $_FILES["img"]["name"];
         $fonte = $_POST["fonte"];
@@ -188,8 +194,8 @@ if ($conn->connect_error) {
         move_uploaded_file($_FILES["img"]["tmp_name"], $target_file);
 
         // Insere os dados no banco de dados
-        $sql = "INSERT INTO questao (enunciado, quest1, quest2, quest3, quest4, quest5, resultado, anoquest, img, fonte, observacao)
-VALUES ('$enunciado', '$pergunta1', '$pergunta2', '$pergunta3', '$pergunta4', '$pergunta5', '$resposta', '$data', '$imagem', '$fonte', '$observacao')";
+        $sql = "INSERT INTO questao (enunciado, pergunta, quest1, quest2, quest3, quest4, quest5, resultado, anoquest, img, fonte, observacao)
+VALUES ('$enunciado', '$pergunta', '$resposta1', '$resposta2', '$resposta3', '$resposta4', '$resposta5', '$correta', '$data', '$imagem', '$fonte', '$observacao')";
 
         if ($conn->query($sql) === TRUE) {
             echo "Dados inseridos com sucesso";
