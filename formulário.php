@@ -11,11 +11,14 @@
     <title>Formulário de cadastro</title>
 
    <style>
+        body{
+            background: #081b29;
+        }
         .h1{
             margin-top:  5%;
             margin-bottom:5%;
             text-align:center;
-            color:white;
+            color: #00abf0;
             
         }
         .top{
@@ -23,12 +26,11 @@
             font-family: 'Poppins', sans-serif;
             border: solid 1px black;
             border-radius:5px;
-            background:#081b29;
             margin-bottom:3%;
             margin-top:5%;
         }
         .container{
-            
+            background-color: rgba(207, 207, 207, 0.1);    
             border: solid 1px black;
             margin-top:5%;
             border-radius:5px;
@@ -43,7 +45,17 @@
        }
        .voltar a {
         text-decoration:none;
-        }
+        color:white;
+       }
+       .voltar a:hover {
+            color: #00abf0;
+            transition:0.5s;
+       }
+       .info{
+        color:white;
+       }
+       
+    
    </style>
 
 </head>
@@ -58,7 +70,7 @@
         <div class="col-md-4 col-sm-4"></div>
         <div class="col-md-4 col-sm-4">
             <div class="form-group">
-                <label for="pergunta1" class=""><i class="bi bi-person"></i> Usuário :</label>
+                <label for="pergunta1" class="info"><i class="bi bi-person"></i> Usuário :</label>
                 <input type="text" class="form-control" id="nome" name="nome">
         </div> </div>
         <div class="col-md-4 col-sm-4"></div></div>
@@ -67,7 +79,7 @@
         <div class="col-md-4 col-sm-4"></div>
         <div class="col-md-4 col-sm-4">
             <div class="form-group">
-                <label for="pergunta1" class=""><i class="bi bi-envelope-at"></i> E-mail:</label>
+                <label for="pergunta1" class="info"><i class="bi bi-envelope-at"></i> E-mail:</label>
                 <input type="email" class="form-control" id="email" name="email">
         </div> </div>
         <div class="col-md-4 col-sm-4"></div></div>
@@ -77,7 +89,7 @@
         <div class="col-md-4 col-sm-4"></div>
         <div class="col-md-4 col-sm-4">
             <div class="form-group">
-                <label for="pergunta1" class=""> Senha :</label>
+                <label for="pergunta1" class="info"><i class="bi bi-lock"></i> Senha :</label>
                 <input type="pass" class="form-control" id="senha" name="senha">
         </div> </div>
         <div class="col-md-4 col-sm-4"></div></div>
