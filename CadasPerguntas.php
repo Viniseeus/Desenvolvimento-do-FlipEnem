@@ -42,6 +42,14 @@ if ($conn->connect_error) {
         .container-fluid {
             margin: 3%;
         }
+        .inputfoto {
+            background-color: gray;
+            color: #FFF;
+            text-transform: uppercase;
+            text-align: center;
+            display: block;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -103,6 +111,8 @@ if ($conn->connect_error) {
             <div class="input-group">
                 <span class="input-group-text">Alternativa A</span>
                 <input class="ml-3 form-control" type="text" id="resposta1" name="resposta1">
+                <span class="input-group-text">Imagem:
+                    <input type="file" value="null" class="ml-3 form-control-file" id="imagem" name="imgr1"></span>
             </div>
         </div>
 
@@ -110,6 +120,8 @@ if ($conn->connect_error) {
             <div class="input-group">
                 <span class="input-group-text">Alternativa B</span>
                 <input class="ml-3 form-control" type="text" id="resposta2" name="resposta2">
+                <span class="input-group-text">Imagem:
+                    <input type="file" value="null" class="ml-3 form-control-file inputfoto" id="imagem" name="imgr2"></span>
             </div>
         </div>
 
@@ -117,6 +129,8 @@ if ($conn->connect_error) {
             <div class="input-group">
                 <span class="input-group-text">Alternativa C</span>
                 <input class="ml-3 form-control" type="text" id="resposta3" name="resposta3">
+                <span class="input-group-text">Imagem:
+                    <input type="file" value="null" class="ml-3 form-control-file" id="imagem" name="imgr3"></span>
             </div>
         </div>
 
@@ -124,6 +138,8 @@ if ($conn->connect_error) {
             <div class="input-group">
                 <span class="input-group-text">Alternativa D</span>
                 <input class="ml-3 form-control" type="text" id="resposta4" name="resposta4">
+                <span class="input-group-text">Imagem:
+                    <input type="file" value="null" class="ml-3 form-control-file" id="imagem" name="imgr4"></span>
             </div>
         </div>
 
@@ -131,6 +147,8 @@ if ($conn->connect_error) {
             <div class="input-group">
                 <span class="input-group-text">Alternativa E</span>
                 <input class="ml-3 form-control" type="text" id="resposta5" name="resposta5">
+              <span class="input-group-text">Imagem:
+                    <input type="file" value="null" class="ml-3 form-control-file" id="imagem" name="imgr5"></span>
             </div>
         </div>
 

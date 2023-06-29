@@ -35,8 +35,11 @@
         }
         .voltar button{
            margin-left:100vh;
-                
         }
+        .container-fluid{
+            height:100%
+        }
+        
     </style>
 
 
@@ -46,20 +49,20 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-1 lateral"></div>
-             <div class="col-10 centro">
+            <div class="col-2 col-md-2  lateral"></div>
+             <div class="col-8 col-md-8 centro">
                 <h1>Meu perfil.</h1>
                 <div class="row">
-                    <div class="col-4 principal">teste</div>
-                    <div class="col-4 principal">teste</div>
-                    <div class="col-4 principal">
-                        <a href="index.php">
+                    <div class="col-6 col-md-6 col-sm-12 principal">teste</div>
+                    <div class="col-6 col-md-6 col-sm-12 principal">teste
+                    <a href="index.php">
                             <button>Voltar</button>
                         </a>
                     </div>
+                   
                 </div>   
             </div>  
-             <div class="col-1 lateral"></div>           
+             <div class="col-2 col-md-2 lateral"></div>           
           
         </div>
     </div>  

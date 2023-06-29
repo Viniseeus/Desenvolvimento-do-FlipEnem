@@ -1,79 +1,97 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Formulário de Coleta de Dados Pessoais</title>
-    <style>
-        .container2 {
-            width: 400px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.1);
-        }
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <title>Formulário de cadastro</title>
 
-        h1 {
-            text-align: center;
+   <style>
+        .h1{
+            margin-top:  5%;
+            margin-bottom:5%;
+            text-align:center;
+            color:white;
+            
         }
+        .top{
+            font-size:13pt;
+            font-family: 'Poppins', sans-serif;
+            border: solid 1px black;
+            border-radius:5px;
+            background:#081b29;
+            margin-bottom:3%;
+            margin-top:5%;
+        }
+        .container{
+            
+            border: solid 1px black;
+            margin-top:5%;
+            border-radius:5px;
+        }
+       .teste{
+           text-align:center; 
+           margin-bottom:5%;        
+       }
+       .voltar{
+        margin-top:5%;
+        padding-left:5%;
+       }
+       .voltar a {
+        text-decoration:none;
+        }
+   </style>
 
-        label {
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        input[type="text"], input[type="email"], input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            font-size: 14px;
-        }
-
-        select {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            font-size: 14px;
-        }
-
-        input[type="submit"] {
-            width: 100%;
-            padding: 10px;
-            background-color: #4CAF50;
-            color: #fff;
-            border: none;
-            border-radius: 3px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #45a049;
-        }
-    </style>
 </head>
 <body>
-    <div class="container2">
-        <h1>Insira seus dados</h1>
-        <form action="/processar_formulario" method="post">
-            <label for="nome">Nome</label>
-            <input type="text" id="nome" name="nome" required>
+     <div class="container">
+        <div class="row">
+        <div class="col-md-4 col-sm-4 voltar"><a href="home.html"><i class="bi bi-arrow-left"></i> Voltar</a></div>
+        <div class="col-md-4 col-sm-4 top"><h1 class="h1">Formulário de cadastro:</h1></div>
+        <div class="col-md-4 col-sm-4"></div>
+        </div>
+    <div class="row">
+        <div class="col-md-4 col-sm-4"></div>
+        <div class="col-md-4 col-sm-4">
+            <div class="form-group">
+                <label for="pergunta1" class=""><i class="bi bi-person"></i> Usuário :</label>
+                <input type="text" class="form-control" id="nome" name="nome">
+        </div> </div>
+        <div class="col-md-4 col-sm-4"></div></div>
+
+        <div class="row">
+        <div class="col-md-4 col-sm-4"></div>
+        <div class="col-md-4 col-sm-4">
+            <div class="form-group">
+                <label for="pergunta1" class=""><i class="bi bi-envelope-at"></i> E-mail:</label>
+                <input type="email" class="form-control" id="email" name="email">
+        </div> </div>
+        <div class="col-md-4 col-sm-4"></div></div>
+
+
+        <div class="row">
+        <div class="col-md-4 col-sm-4"></div>
+        <div class="col-md-4 col-sm-4">
+            <div class="form-group">
+                <label for="pergunta1" class=""> Senha :</label>
+                <input type="pass" class="form-control" id="senha" name="senha">
+        </div> </div>
+        <div class="col-md-4 col-sm-4"></div></div>
+
+        <div class="row">
+        <div class="col-md-4 col-sm-4"></div>
+        <div class="col-md-4 col-sm-4 teste">
+            <button type="submit" name="btnCadastrar botao" class="btn btn-primary">Cadastrar</button>
+        </div>
+        <div class="col-md-4 col-sm-4"></div>
+        </div>
+
             
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="senha">Senha</label>
-            <input type="password" id="senha" name="senha" required>
-            
-            <label for="idade">Idade</label>
-            <input type="number" id="idade" name="idade" required>
-            
-            
-            <input type="submit" value="Enviar">
-        </form>
-    </div>
+        </div>
+
 </body>
 </html>
