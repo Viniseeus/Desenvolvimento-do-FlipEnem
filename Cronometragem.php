@@ -44,7 +44,7 @@
 				echo "<h2 style='text-align:center;'>" . $row["enunciado"] . "</h2>";
 		        echo "<img src='uploads/" . $row["img"] . "' style='display:block;margin:auto; width: 40%;'>";
 		        echo "<br>";
-		        echo "<form method='POST'>";
+				echo "<form method='POST'>";
 		        echo "<div style='text-align : center;'>";
 		        echo "<h4 style='text-align:center;'>" . $row["pergunta"] . "</h4>";
 				echo "<div class='questoes'>";

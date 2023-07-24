@@ -31,7 +31,7 @@
             z-index: 100;
         }
         .logo{
-            font-size: 45px;
+            font-size: 50px;
             color: #00abf0;
             text-decoration: none;
             font-weight: 600;
@@ -44,9 +44,9 @@
             margin-left:35px;
             transition: .3s;
         }
-        .navbar a:hover,
-        .navbar a.logo{
+        .navbar a:hover{
             color: #00abf0;
+            transition: 0.5s;
         }
         .home{
             height: 100vh;
@@ -135,11 +135,11 @@
     <a href="#" class="logo"><i class="bi bi-joystick"></i> FlipEnem</a>
     
     <nav class="navbar">
-        <a href="#"><i class="bi bi-person-square"></i> Meu perfil</a>
-        <a href="#"><i class="bi bi-clock-history"></i> Meu histórico</a>
-        <a href="#"><i class="bi bi-pencil"></i> Feedbacks</a>
-        <a href="#"><i class="bi bi-journal-bookmark"></i> Sobre o projeto</a>
-        <a href="#"><i class="bi bi-gear"></i> Configurações</a>
+        <a href="my.php" class="active"><i class="bi bi-person"></i> Meu perfil</a>
+        <a href="historico.php"> <i class="bi bi-hourglass-split"></i> Meu histórico</a>
+        <a href="feed.php"><i class="bi bi-pencil"></i> Feedbacks</a>
+        <a href="sobreprojeto.php"><i class="bi bi-journal-bookmark"></i> Sobre o projeto</a>
+        <a href="config.php"><i class="bi bi-gear"></i> Configurações</a>
     </nav>
 </header>
 
@@ -152,7 +152,7 @@
         <h3>Bora jogar ?</h3>
         <br>
         <div class="btn-box">
-            <a href="telaresponda.html">Jogar</a>
+            <a href="telaresponda.php">Jogar</a>
             <a href="formulário.php">Cadastrar</a>
 
         </div>
