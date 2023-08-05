@@ -115,6 +115,32 @@
             color: #00abf0;
             transition: 0.5s;
         }
+        .responder {
+            text-align: center;
+            padding:5px;
+        }
+        .btnresponder{
+            background-color: #00abf0;
+            border: solid 1px black;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 20px;
+        }
+        .selecionavel {
+  cursor: pointer;
+  border: solid 1px black;
+            margin-top: 2%;
+            border-radius: 4px;
+            line-height: 1.2;
+            font-size: 13pt;
+            vertical-align: middle;
+}
+.selecionado {
+    background-color: rgb(31, 167, 167, 0.6);
+ /* Por exemplo, definindo a cor azul */
+  color: whitesmoke;
+}
+        
     </style>
 </head>
 
@@ -135,6 +161,8 @@
             // Exibindo as informações na tela
 
 ?>
+
+<form method="POST" action="">
 
      <div class='container'>
         
@@ -173,30 +201,25 @@
   
 
                <div class='row'>
-            <div class='col-1 col-sm-1 col-md-1 col-xs-1 teste1'>A</div>
-            <div id='div1' class='div-conteudo col-11 col-sm-11 col-md-11 col-xs-11 teste'><?php echo "<input id='op1' type='radio' name='resposta' value='1'><label for='op1'> " . $row["quest1"] . "</label><br>"; ?></div>
+            <div id='div1' class='div-conteudo col-12 col-sm-12 col-md-12 col-xs-12 teste ' class="selecionavel" data-id="1" onclick="alternarSelecao(this)"><?php echo "<input id='op1' type='radio' name='resposta' value='1'><label for='op1'> " . $row["quest1"] . "</label><br>"; ?></div>
         </div>
 
 
                 <div class='row'>  
-            <div class='col-1 col-sm-1 col-md-1 col-xs-1  teste1'>B</div>  
-            <div id='div1' class='div-conteudo col-11 col-sm-11 col-md-11 col-xs-11 teste'><?php echo "<input id='op2' type='radio' name='resposta' value='2'><label for='op2'> " . $row["quest2"] . "</label><br>"; ?></div>
+            <div id='div1' class='div-conteudo col-12 col-sm-12 col-md-12 col-xs-12 teste'  class="selecionavel" data-id="2" onclick="alternarSelecao(this)"><?php echo "<input id='op2' type='radio' name='resposta' value='2'><label for='op2'> " . $row["quest2"] . "</label><br>"; ?></div>
         </div>
 
               <div class='row'>   
-            <div class='col-1 col-sm-1 col-md-1 col-xs-1  teste1'>C</div>  
-            <div id='div1' class='div-conteudo col-11 col-sm-11 col-md-11 col-xs-11 teste'><?php echo "<input id='op3' type='radio' name='resposta' value='3'><label for='op3'> " . $row["quest3"] . "</label><br>"; ?></div>
+            <div id='div1' class='div-conteudo col-12 col-sm-12 col-md-12 col-xs-12 teste selecionavel' data-id="3" onclick="alternarSelecao(this)"><?php echo "<input id='op3' type='radio' name='resposta' value='3'><label for='op3'> " . $row["quest3"] . "</label><br>"; ?></div>
         </div>
    
         <div class='row'>    
-            <div class='col-1 col-sm-1 col-md-1 col-xs-1  teste1'>D</div>  
-            <div id='div1' class='div-conteudo col-11 col-sm-11 col-md-11 col-xs-11 teste'><?php echo "<input id='op4' type='radio' name='resposta' value='4'><label for='op4'> " . $row["quest4"] . "</label><br>"; ?></div>
+            <div id='div1' class='div-conteudo col-12 col-sm-12 col-md-12 col-xs-12 teste selecionavel' data-id="4" onclick="alternarSelecao(this)"><?php echo "<input id='op4' type='radio' name='resposta' value='4'><label for='op4'> " . $row["quest4"] . "</label><br>"; ?></div>
         </div>
     
 
             <div class='row'>    
-            <div class='col-1 col-sm-1 col-md-1 col-xs-1 align-middle teste1 '>E</div>  
-        <div id='div1' class='div-conteudo col-11 col-sm-11 col-md-11 col-xs-11 teste'><?php echo "<input id='op5' type='radio' name='resposta' value='5'><label for='op5'> " . $row["quest5"] . "</label><br>"; ?></div>
+        <div id='div1' class='div-conteudo col-12 col-sm-12 col-md-12 col-xs-12 teste'><?php echo "<input id='op5' type='radio' name='resposta' value='5'><label for='op5'> " . $row["quest5"] . "</label><br>"; ?></div>
         </div>
     
 
@@ -204,29 +227,68 @@
             <div class='col-12 col-sm-12 col-md-12 col-xs-12 fonte'><?php echo $row['fonte'] ?></div>
 
         </div>  
-        <div class='col-12 col-sm-12 col-md-12 col-xs-12 fonte'><?php echo "<input type='submit' style='text-aling:left; color: green;' value='Responda'>";
- ?></div>
+        <div class='col-12 col-sm-12 col-md-12 col-xs-12 responder '><input type="submit" value="Responder" class="btnresponder">
+</div>
 
         </div>
         </div>
+
+</form>
+
 <?php
-            // Verificando se a resposta do usuário está correta
+           
+       // Verificando se a resposta do usuário está correta
 
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                if ($_POST["resposta"] == $row["resultado"]) {
-                    echo "<p style='color:green;'>Você acertou!</p>";
-                } else {
-                    echo "<p style='color:red;'>Você errou!</p>";
-                }
+                if ($_POST["resposta"] == null ){
+                    echo "<script>
+                        alert('Selecione uma questão !');
+                    </script>";
             }
-        }
-    } else {
+                elseif ($_POST["resposta"] == $row["resultado"]) {
+                    echo "<script>
+                    window.location.replace('home.php'); 
+
+                    </script>"; header("location:home.php");
+                } else {
+                    echo "<script>alert('Você errou, a resposta é');  
+                    window.location.replace('home.php'); 
+                    </script>";
+                 }
+            }
+        }     
+
+    }  else {
         echo "Não foram encontradas perguntas no banco de dados.";
     }
 
+   
     // Fechando a conexão com o banco de dados
     $conn->close();
     ?>
+
+<script>
+    function alternarSelecao(div) {
+        var divsSelecionaveis = document.querySelectorAll('.selecionavel');
+        divsSelecionaveis.forEach(function (divSelecionavel) {
+            if (divSelecionavel === div) {
+                // Se a div atual for a clicada, verifica se já está selecionada
+                if (divSelecionavel.classList.contains("selecionado")) {
+                    // Se já estiver selecionada, remove a classe "selecionado"
+                    divSelecionavel.classList.remove("selecionado");
+                } else {
+                    // Se não estiver selecionada, adiciona a classe "selecionado"
+                    divSelecionavel.classList.add("selecionado");
+                }
+            } else {
+                // Se a div não for a clicada, desmarca removendo a classe "selecionado"
+                divSelecionavel.classList.remove("selecionado");
+            }
+        });
+    }
+</script>
+
+
 </body>
 
 </html>
