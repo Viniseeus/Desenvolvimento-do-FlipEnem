@@ -65,7 +65,7 @@
                     
                 <div class="row">
                     <div class="col-12 col-sm-12 principal">
-                    <h1 class="botaovoltar"><a href="home.php "><i class="bi bi-arrow-left"></i> Voltar</a></h1>
+                    <h1 class="botaovoltar"><a href="index.php "><i class="bi bi-arrow-left"></i> Voltar</a></h1>
 
                     <h1 class="feed">Deixe seu feed: <input type="text-area" placeholder=" . . .">
                         

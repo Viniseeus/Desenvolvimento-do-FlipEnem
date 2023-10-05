@@ -58,7 +58,7 @@
                      <p>Aqui ficará salvo o seu histórico de suas jogadas </p>
                 <div class="row">
                     <div class="col-12 principal">
-                    <h1 class="botaovoltar"><a href="home.php"><i class="bi bi-arrow-left"></i> Voltar</a></h1>
+                    <h1 class="botaovoltar"><a href="index.php"><i class="bi bi-arrow-left"></i> Voltar</a></h1>
                     </div>
                 </div>
                 </div>   

@@ -1,138 +1,120 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Iso&family=Smooch&display=swap');
-
-*{
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+  }
+  
+  .quiz-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
     box-sizing: border-box;
-}
-
-
-.cabecalho{
-    height: 10vh;
-    background-color:rgb(120, 152, 221);
-    display: block;
-
-}
-
-.logo{
-    font-size: 50px;
-    color:rgba(255, 255, 255, 0.89);
-    position: absolute;
-    margin-left: 82vh;
-    margin-top: 2vh;
-    font-family: 'Rubik Iso', cursive;
-    
-}
-
-
-.cabecalho nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    margin-top: 2.7vh;
-  
+    text-align: center; /* Centraliza o conteúdo */
+    border: 2px solid #ccc; /* Adiciona uma borda */
+    margin-top: 20px; /* Adiciona uma margem superior */
+    padding: 20px; /* Adiciona um espaço interno */
   }
   
-  .cabecalho nav li {
-    display: inline-block;
+  
+  .clock {
+    /* Estilos para o relógio */
+    margin-bottom: 20px;
   }
   
-  .cabecalho nav a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: #333;
+  .question {
+    font-size: 18px;
+    margin-bottom: 20px;
+  } 
+  .question p {
+    word-wrap: break-word;
+    white-space: normal;
+  }
+  .question-statement  {
+    word-wrap: break-word;
+    white-space: normal;
+  }
+  .question-source{
+    word-wrap: break-word;
+    white-space: normal;
   }
   
-  .cabecalho nav a:hover {
-    background-color:rgb(109, 143, 218);
-    border-radius: 5px;
-  }
-
-  
-
-.container{
+  .options {
     display: flex;
-   
-}
-
-.esquerda {
-    background-color: rgb(207, 207, 207); 
-    height: 100vh;  
-}
-
-
-.direita{
-    background-color: rgb(207, 207, 207); 
-    height:100vh;
-}
-
-.centro{
-    background-color: rgba(207, 207, 207, 0.5); 
-    height:100vh;
-
-}
-
-/* Botões */
-
-.centro button{
-    background-color: green;
-    width: 10%;
-    height: 5%;
-    border-radius: 7px;
-    margin-left: 43% ;
-    margin-top: 30%;
-
-}
-
-.comecar {
-    margin-left: 45%;
-}
-/* CSS DO TEMPO DA PERGUNTA*/
-
-.contagem  {
-    background-color: rgb(85, 85, 85);
-    padding-left: 46.4%;
-    height: 10%;
-    color: white;
-}
-.contagem h1{
-    padding-top: 1%;
-}
-
-/* CSS SOBRE A LISTA NA ESQUERDA DA PÁGINA PRINCIPAL*/
-
-.esquerda ul {
-    padding-top: 7vh;
-    padding-left: 18.5%;
-    list-style: none;
-    line-height: 5vh;
-}
-.esquerda a {
-    text-decoration: none;
-    color: black;
-    font-size: 30px;
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
-}
-
-/*CSS DA PARTE DIREITA DA TELA INICIAL (RANKING)*/
-.direita h1{
-    text-align: center;
-    margin-top: 3vh;
-}
-.quadroranking{
-    background-color: rgb(14, 238, 163);
-    height: 86vh;
-    margin-left: 5px;
-    margin-right: 5px ;
-}
-.quadroranking p {
-    margin-top: 4vh;
-    text-align: center;
-}
-
-.questoes {
-    line-height: 5vh;
-    border: solid 1px black; 
-    padding-left: 5vh;
-}
+    flex-direction: column;
+  }
+  
+  .option {
+    padding: 10px;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    overflow: hidden; /* Para esconder bordas extras se o conteúdo for maior que a div */
+    word-wrap: break-word; /* Quebra as palavras quando atingem a borda da div */
+    white-space: normal; /* Evita que o texto saia para fora da div */
+  }
+  .option:hover {
+    background-color: #007bff;
+  }
+  
+  .submit-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    margin-top: 20px; /* Adiciona margem ao topo */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #007bff;
+  }
+  
+  
+  .option.selected {
+    background-color: #007bff; 
+    }
+  
+    #timer {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #333;
+      padding: 10px 20px;
+      border: 2px solid #333;
+      border-radius: 5px;
+      background-color: #fff;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+      margin-bottom: 15px;      
+  }
+  
+  /* Estilização para as informações da questão */
+  .question-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    word-wrap: break-word; /* Quebra as palavras quando atingem a borda da div */
+    white-space: normal; /* Permite que o texto se ajuste automaticamente à altura da div */
+    color: #fff;
+    
+  }
+  
+  .question-year, .question-area {
+    font-weight: bold;
+  }
+  
+  /* Estilização para o enunciado da questão */
+  .question-statement {
+    margin-top: 10px;
+  }
+  
+  /* Restante dos estilos... */
+  .question-source {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+  }
+    
+  
+  
+  

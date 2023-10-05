@@ -95,7 +95,7 @@ if ($conn->connect_error) {
         <div class="ml-3 my-3"><label class="ml-3 form-label"></label>
             <div class="input-group">
                 <span class="input-group-text">Enunciado</span>
-                <input class="ml-3 form-control" type="text" rows="5" id="enunciado" name="enunciado">
+                <input class="ml-3 form-control" type="text" rows="5" id="enunciado" name="enunciado" require>
             </div>
         </div>
         <div class="ml-3 my-3"><label class="ml-3 form-label"></label>
