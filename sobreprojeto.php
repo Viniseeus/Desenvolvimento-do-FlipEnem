@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -61,7 +60,7 @@
                     
                 <div class="row">
                     <div class="col-12 principal">
-                    <h1 class="botaovoltar"><a href="home.php"><i class="bi bi-arrow-left"></i> Voltar</a></h1>
+                    <h1 class="botaovoltar"><a href="index.php"><i class="bi bi-arrow-left"></i> Voltar</a></h1>
                     <p class="p">O FlipEnem foi um projeto iniciado no IFC - Sombrio, pelos alunos... </p>
                     <p class="p">Ele recebeu este nome pelo fato de ser um fliperama com perguntas do Enem, cada aluno do IFC tinha acesso a uma conta e quando acessava, recebia uma pergunta aleatória e quando respondida tinha um resultado final para saber se acertou ou errou a pergunta</p>
                 </div>

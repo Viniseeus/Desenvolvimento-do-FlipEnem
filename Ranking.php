@@ -100,44 +100,26 @@ $userData = array(
 </head>
 
 <body>
-  <header class="header headerb navbar-fixed">
-    <nav class="navbar navbar-expand-lg navbar-blue p-1 m-2">
-      <div class="container">
-      <h1 class="logo"><i class="bi bi-joystick"></i>FlipEnem</h1>
+<header class="header headerb navbar-fixed">
+        <nav class="navbar navbar-expand-lg navbar-blue p-1 m-2">
+            <div class="container">
+                <h1 class="logo"><i class="bi bi-joystick"></i>FlipEnem</h1>
 
 
-        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul class="nav col-12 mb-2 justify-content-end mb-md-0">
-            <li class="nav-item"><a href="index.php" class="nav-link px-2 link-secondary bi bi-house-fill"> Home</a></li>
-            <li class="nav-item"><a href="feed.php" class="nav-link px-2 link-secondary bi bi-chat-dots-fill"> Feedback</a></li>
-            <li class="nav-item"><a href="sobreprojeto.php" class="nav-link px-2 link-secondary bi bi-device-ssd-fill"> Sobre o projeto</a></li>
-          </ul>
-        </div>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="nav col-12 mb-2 justify-content-end mb-md-0">
+                        <li class="nav-item"><a href="index.php" class="nav-link px-2 link-secondary bi bi-house-fill"> Home</a></li>
+                        <li class="nav-item"><a href="feed.php" class="nav-link px-2 link-secondary bi bi-chat-dots-fill"> Feedback</a></li>
+                        <li class="nav-item"><a href="sobreprojeto.php" class="nav-link px-2 link-secondary bi bi-device-ssd-fill"> Sobre o projeto</a></li>
+                    </ul>
+                </div>
 
-        <div class="dropdown text-end">
-          <a href="#" class="link-secondary text-decoration-none dropdown-toggle" data-bs-toggle="dropdown">
-            <i class="bi bi-person-circle"></i> <!-- Ícone do usuário -->
-          </a>
-          <ul class="dropdown-menu text-small">
-            <li><a class="dropdown-item bi bi-person-vcard-fill" href="Perfil.php"> Meu perfil</a></li>
-            <li><a class="dropdown-item bi bi-clock-history" href="historico.php"> Histórico</a></li>
-            <li><a class="dropdown-item bi bi-gear-fill" href="configurações.php"> Configurações</a></li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-            <li><a class="dropdown-item bi bi-box-arrow-left" href="sair.php">Sair</a></li>
-          </ul>
-        </div>
-
-      </div>
-    </nav>
-  </header>
-
-
+        </nav>
+    </header>
 
   <h2>Ranking de Usuários</h2>
   <table id="ranking-table">
@@ -149,7 +131,7 @@ $userData = array(
   </tr>
   <?php
   // Consulta SQL para buscar dados dos usuários
-  $consulta = "SELECT usuario, acertos, erros FROM usuario ORDER BY acertos DESC";
+  $consulta = "SELECT usuario, acertos, erros FROM usuario ORDER BY acertos DESC, erros ASC";
   $resultado = mysqli_query($conn, $consulta);
 
   // Exibir os usuários na tabela

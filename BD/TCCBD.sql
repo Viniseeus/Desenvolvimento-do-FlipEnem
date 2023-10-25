@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `tccflipenem` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `tccflipenem`;
 -- MySQL dump 10.13  Distrib 8.0.32, for Win64 (x86_64)
 --
 -- Host: localhost    Database: tccflipenem
@@ -153,7 +151,7 @@ CREATE TABLE `resultado` (
   KEY `codquest_idx` (`codquest`),
   CONSTRAINT `codquest` FOREIGN KEY (`codquest`) REFERENCES `questao` (`idquest`),
   CONSTRAINT `coduser` FOREIGN KEY (`codusuario`) REFERENCES `usuario` (`iduser`)
-) ENGINE=InnoDB AUTO_INCREMENT=106 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=78 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -162,7 +160,7 @@ CREATE TABLE `resultado` (
 
 LOCK TABLES `resultado` WRITE;
 /*!40000 ALTER TABLE `resultado` DISABLE KEYS */;
-INSERT INTO `resultado` VALUES (77,2,69,'2023-08-31 22:06:46',0),(78,14,84,'2023-09-02 12:14:26',1),(79,14,38,'2023-09-02 12:17:50',0),(80,14,53,'2023-09-02 12:18:50',0),(81,15,49,'2023-09-02 12:25:04',0),(82,15,17,'2023-09-02 12:29:29',0),(83,15,67,'2023-09-02 12:37:30',1),(84,13,40,'2023-09-13 11:11:31',0),(85,13,39,'2023-09-13 11:12:41',0),(86,13,58,'2023-09-13 11:15:40',1),(87,2,57,'2023-09-14 11:01:50',0),(88,2,69,'2023-09-14 11:02:00',0),(89,2,38,'2023-09-14 11:02:06',0),(90,13,19,'2023-09-14 11:25:00',0),(91,13,83,'2023-09-14 11:25:31',0),(92,13,34,'2023-09-14 11:25:59',1),(93,2,50,'2023-09-28 13:33:59',1),(94,16,69,'2023-09-28 13:45:49',0),(95,2,12,'2023-09-28 14:40:06',1),(96,2,10,'2023-09-28 14:40:21',0),(97,2,16,'2023-09-28 14:40:35',1),(98,2,52,'2023-09-28 14:40:50',0),(99,2,14,'2023-09-28 15:01:18',0),(100,2,83,'2023-09-28 15:01:32',1),(101,2,58,'2023-09-28 15:05:04',0),(102,17,73,'2023-09-28 15:15:01',0),(103,17,12,'2023-09-28 15:15:08',0),(104,17,51,'2023-09-28 15:15:14',0),(105,17,16,'2023-09-28 15:15:20',0);
+INSERT INTO `resultado` VALUES (77,2,69,'2023-08-31 22:06:46',0);
 /*!40000 ALTER TABLE `resultado` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -186,7 +184,7 @@ CREATE TABLE `usuario` (
   `escolafaculdade` varchar(50) DEFAULT NULL,
   `imagem` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`iduser`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -195,7 +193,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,'David','adm123','adm@gmail.com','2000-05-02',3,3,NULL,NULL,NULL,''),(2,'Vinicius','vini123','viniciusleandropereira@gmail.com','2000-03-04',9,9,NULL,'TI','Campus IFC Sombrio',''),(3,'Luiz','luiz123','luizinho@gmail.com',NULL,9,6,NULL,NULL,NULL,NULL),(4,'joao','joao123','joao@gmail.com','0200-01-02',6,3,NULL,NULL,NULL,NULL),(5,'Tiago','123456','sdfghjkl@gmailcom',NULL,0,3,NULL,NULL,NULL,NULL),(6,'Dani','danilinda','danieladeoliveiramateus.sb@gmail.com',NULL,4,5,NULL,NULL,NULL,NULL),(7,'Guga','guga1234','gugacrispin@gmail.com',NULL,1,3,NULL,NULL,NULL,NULL),(8,'Nathália ','aleluia','natygvinny@gmail.com','2000-01-01',1,5,NULL,NULL,NULL,NULL),(9,'Kay','kay123','kay@gmail',NULL,0,1,NULL,NULL,NULL,NULL),(10,'JESSICALEANDRO','Gio290717','jessica.leandro1@outlook.com',NULL,3,0,NULL,NULL,NULL,NULL),(11,'nathiel','vinicius','nathielgames@gmail.com',NULL,0,3,NULL,NULL,NULL,NULL),(13,'pedro','123456789','jpjoao.j14@gmail.com',NULL,6,9,NULL,NULL,NULL,NULL),(14,'Marcia','Marcia','marcia01.mendess@gmail.com',NULL,4,1,NULL,NULL,NULL,NULL),(15,'o cara','ocara','toni-ramos@hotmail.com',NULL,4,1,NULL,NULL,NULL,NULL),(16,'joao paulo','12345678','joaop@gmail.com',NULL,1,0,NULL,NULL,NULL,NULL),(17,'victormredes','123','victormredes@gmail.com',NULL,4,0,NULL,NULL,NULL,NULL);
+INSERT INTO `usuario` VALUES (1,'David','adm123','adm@gmail.com','2000-05-02',3,3,NULL,NULL,NULL,''),(2,'Vinicius','vini123','viniciusleandropereira@gmail.com','2000-03-04',2,5,NULL,'TI','Campus IFC Sombrio',''),(3,'Luiz','luiz123','luizinho@gmail.com',NULL,9,6,NULL,NULL,NULL,NULL),(4,'joao','joao123','joao@gmail.com','0200-01-02',6,3,NULL,NULL,NULL,NULL),(5,'Tiago','123456','sdfghjkl@gmailcom',NULL,0,3,NULL,NULL,NULL,NULL),(6,'Dani','danilinda','danieladeoliveiramateus.sb@gmail.com',NULL,4,5,NULL,NULL,NULL,NULL),(7,'Guga','guga1234','gugacrispin@gmail.com',NULL,1,3,NULL,NULL,NULL,NULL),(8,'Nathália ','aleluia','natygvinny@gmail.com','2000-01-01',1,5,NULL,NULL,NULL,NULL),(9,'Kay','kay123','kay@gmail',NULL,0,1,NULL,NULL,NULL,NULL),(10,'JESSICALEANDRO','Gio290717','jessica.leandro1@outlook.com',NULL,3,0,NULL,NULL,NULL,NULL),(11,'nathiel','vinicius','nathielgames@gmail.com',NULL,0,3,NULL,NULL,NULL,NULL),(13,'pedro','123456789','jpjoao.j14@gmail.com',NULL,2,7,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -208,4 +206,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-10-05 15:16:47
+-- Dump completed on 2023-09-01 17:31:17

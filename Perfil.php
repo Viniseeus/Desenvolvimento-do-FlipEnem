@@ -109,7 +109,7 @@ $userData = array(
     <header class="header headerb navbar-fixed">
         <nav class="navbar navbar-expand-lg navbar-blue p-1 m-2">
             <div class="container">
-            <h1 class="logo"><i class="bi bi-joystick"></i>FlipEnem</h1>
+                <h1 class="logo"><i class="bi bi-joystick"></i>FlipEnem</h1>
 
 
                 <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -119,11 +119,12 @@ $userData = array(
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="nav col-12 mb-2 justify-content-end mb-md-0">
                         <li class="nav-item"><a href="index.php" class="nav-link px-2 link-secondary bi bi-house-fill"> Home</a></li>
-                        <li class="nav-item"><a href="historico.php" class="nav-link px-2 link-secondary bi bi-clock-history"> Histórico</a></li>
-                        <li class="nav-item"><a href="configura.php" class="nav-link px-2 link-secondary bi bi-gear-fill"> Configurações</a></li>
+                        <li class="nav-item"><a href="feed.php" class="nav-link px-2 link-secondary bi bi-chat-dots-fill"> Feedback</a></li>
+                        <li class="nav-item"><a href="sobreprojeto.php" class="nav-link px-2 link-secondary bi bi-device-ssd-fill"> Sobre o projeto</a></li>
                     </ul>
                 </div>
             </div>
+
         </nav>
     </header>
 
@@ -137,15 +138,25 @@ $userData = array(
                         <h1 class="botaovoltar"><a href="index.php"><i class="bi bi-arrow-left"></i> Voltar</a></h1>
                         <?php
                         if (!empty($rowUserData['imagem'])) {
-                            echo "<img src='" . $rowUserData['imagem'] . "' class='foto profile-image' alt='Foto de Perfil'><br>";
+                            echo "<img src='userimage/" . $rowUserData['imagem'] . "' class='foto profile-image' alt='Foto de Perfil'><br>";
                         } else {
                             echo "Sem foto<br>";
                         }
                         echo "Nome: " . $rowUserData['usuario'] . "<br>";
                         echo "Email: " . $rowUserData['email'] . "<br>";
-                        echo "Curso: " . $rowUserData['curso'] . "<br>";
-                        echo "Escolafaculdade: " . $rowUserData['escolafaculdade'] . "<br>";
-                        echo "Data de nascimento: " . date('d/m/Y', strtotime($rowUserData['datanasc'])) . "<br>";
+
+                        $curso = ($rowUserData['curso'] === null) ? "Não informado" : $rowUserData['curso'];
+                        echo "Curso: " . $curso . "<br>";
+                        
+                        $escolafaculdade = ($rowUserData['escolafaculdade'] === null) ? "Não informado" : $rowUserData['escolafaculdade'];
+                        echo "Escolafaculdade: " . $escolafaculdade . "<br>";
+
+                        $datanasc = ($rowUserData['datanasc'] === null || $rowUserData['datanasc'] === "1970-01-01") ? "Data não informada" : date('d/m/Y', strtotime($rowUserData['datanasc']));
+                        echo "Data de nascimento: " . $datanasc . "<br>";
+
+                        echo "<a href='editaruser.php' class='btn btn-primary'>Editar Perfil</a>";
+
+
                         ?>
                     </div>
                     <div class="col-md-6 principal" style="background-color: rgba(0, 0, 0, 0.5); padding: 20px;">
@@ -154,8 +165,8 @@ $userData = array(
                                 <canvas id="chart"></canvas>
                                 <div class="text-center mt-3">
                                     <button class="btn corbt" onclick="redirectToRanking()">Ver Classificação Geral</button>
-                                </div> 
-                                <?php else : ?>
+                                </div>
+                            <?php else : ?>
                                 <p class="text-muted">Não há dados suficientes para gerar o gráfico de desempenho.</p>
                             <?php endif; ?>
                         </div>

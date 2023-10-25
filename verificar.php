@@ -109,25 +109,23 @@ $conn->close();
         .resultado {
             text-align: center;
         }
+
         .logo {
             color: #007bff;
             font-size: 25pt;
             text-align: center;
             margin-bottom: 3%;
         }
+
         .botoes {
             margin-top: 1%;
-            
+          
         }
     </style>
 </head>
-
 <body>
 
 <h1 class="logo"><i class="bi bi-joystick"></i>FlipEnem</h1>
-
-
-
     <div class="container">
         <div class="resultado">
             <div class="row">

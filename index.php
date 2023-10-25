@@ -13,6 +13,11 @@ $resultUserId = mysqli_query($conn, $sqlUserId);
 $rowUserId = mysqli_fetch_assoc($resultUserId);
 $userId = $rowUserId['iduser'];
 
+$sqlUserADM = "SELECT ADM FROM usuario WHERE email = '$email'";
+$resultUserADM = mysqli_query($conn, $sqlUserADM);
+$rowUserADM = mysqli_fetch_assoc($resultUserADM);
+$admStatus = $rowUserADM['ADM'];
+
 // Consulta SQL para obter os dados do usuário
 $sqlUserData = "SELECT acertos, erros FROM usuario WHERE iduser = $userId";
 $resultUserData = mysqli_query($conn, $sqlUserData);
@@ -96,20 +101,26 @@ $userData = array(
 
                 <div class="dropdown text-end">
                     <a href="#" class="link-secondary text-decoration-none dropdown-toggle" data-bs-toggle="dropdown">
-                        <i class="bi bi-person-circle"></i> <!-- Ícone do usuário -->
+                        <i class="bi bi-person-circle"></i>
                     </a>
                     <ul class="dropdown-menu text-small">
                         <li><a class="dropdown-item bi bi-person-vcard-fill" href="Perfil.php"> Meu perfil</a></li>
                         <li><a class="dropdown-item bi bi-clock-history" href="historico.php"> Histórico</a></li>
                         <li><a class="dropdown-item bi bi-gear-fill" href="configurações.php"> Configurações</a></li>
+                         <?php
+                        if ($admStatus == 1) {
+                            echo '<li><a class="dropdown-item bi bi-question-octagon-fill" href="perguntas.php"> Cadastrar perguntas</a></li>';
+                            echo '<li><a class="dropdown-item bi bi-person-add" href="moduseradm.php"> Modificar user</a></li>';
+                        }
+                        ?> 
                         <li>
                             <hr class="dropdown-divider">
                         </li>
                         <li><a class="dropdown-item bi bi-box-arrow-left" href="sair.php">Sair</a></li>
+                       
                     </ul>
                 </div>
 
-            </div>
         </nav>
     </header>
 
