@@ -110,7 +110,6 @@ $userData = array(
                     <ul class="dropdown-menu text-small">
                         <li><a class="dropdown-item bi bi-person-vcard-fill" href="Perfil.php"> Meu perfil</a></li>
                         <li><a class="dropdown-item bi bi-clock-history" href="historico.php"> Histórico</a></li>
-                        <li><a class="dropdown-item bi bi-gear-fill" href="configurações.php"> Configurações</a></li>
                          <?php
                         if ($admStatus == 1) {
                             echo '<li><a class="dropdown-item bi bi-question-octagon-fill" href="perguntas.php"> Cadastrar perguntas</a></li>';

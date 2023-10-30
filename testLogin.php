@@ -5,7 +5,7 @@ if (!empty($_POST['email']) && !empty($_POST['senha'])) {
     include_once('conexao.php');
 
     $email = $_POST['email'];
-    $senha = $_POST['senha'];
+    $senha = ($_POST['senha']);
 
     $sql = "SELECT * FROM usuario WHERE email = '$email' and senha = '$senha'";
 

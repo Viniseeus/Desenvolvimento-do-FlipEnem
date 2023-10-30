@@ -132,7 +132,7 @@
 if (isset($_POST['btncad'])) {
     $user = $_POST["usuario"];
     $email = $_POST["email"];
-    $senha = $_POST["senha"];
+    $senha = ($_POST["senha"]);  
 
     $sql = "INSERT INTO usuario (usuario, senha, email, acertos, erros)
             VALUES ('$user', '$senha', '$email', 0, 0)";
@@ -147,6 +147,7 @@ if (isset($_POST['btncad'])) {
 
     $conn->close();
 }
+
     ?>
 
 
