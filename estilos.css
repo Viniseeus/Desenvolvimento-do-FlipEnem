@@ -9,15 +9,14 @@ body {
     margin: 0 auto;
     padding: 20px;
     box-sizing: border-box;
-    text-align: center; /* Centraliza o conteúdo */
-    border: 2px solid #ccc; /* Adiciona uma borda */
-    margin-top: 20px; /* Adiciona uma margem superior */
-    padding: 20px; /* Adiciona um espaço interno */
+    text-align: center; 
+    border: 2px solid #ccc;
+    margin-top: 20px; 
+    padding: 20px;
   }
   
   
   .clock {
-    /* Estilos para o relógio */
     margin-bottom: 20px;
   }
   
@@ -48,9 +47,9 @@ body {
     border: 1px solid #007bff;
     border-radius: 5px;
     margin-bottom: 5px;
-    overflow: hidden; /* Para esconder bordas extras se o conteúdo for maior que a div */
-    word-wrap: break-word; /* Quebra as palavras quando atingem a borda da div */
-    white-space: normal; /* Evita que o texto saia para fora da div */
+    overflow: hidden; 
+    word-wrap: break-word; 
+    white-space: normal;
   }
   .option:hover {
     background-color: #007bff;
@@ -61,7 +60,7 @@ body {
     color: #fff;
     padding: 10px 20px;
     border: none;
-    margin-top: 20px; /* Adiciona margem ao topo */
+    margin-top: 20px; 
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
@@ -87,14 +86,13 @@ body {
       margin-bottom: 15px;      
   }
   
-  /* Estilização para as informações da questão */
   .question-info {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
-    word-wrap: break-word; /* Quebra as palavras quando atingem a borda da div */
-    white-space: normal; /* Permite que o texto se ajuste automaticamente à altura da div */
+    word-wrap: break-word; 
+    white-space: normal; 
     color: #fff;
     
   }
@@ -103,12 +101,10 @@ body {
     font-weight: bold;
   }
   
-  /* Estilização para o enunciado da questão */
   .question-statement {
     margin-top: 10px;
   }
   
-  /* Restante dos estilos... */
   .question-source {
     margin-top: 10px;
     font-size: 14px;

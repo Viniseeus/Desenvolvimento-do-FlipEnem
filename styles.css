@@ -1,5 +1,3 @@
-/* O restante do seu CSS permanece inalterado */
-
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -69,7 +67,6 @@
     background-color: #0056b3;
     border-color: #0056b3;
   }
-  /* O restante do seu CSS permanece inalterado */
 
 .ranking-table {
   width: 100%;

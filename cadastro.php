@@ -12,10 +12,7 @@
     <title>Formulário de cadastro</title>
 
     <?php
-    // Conecta ao banco de dados
-    //   $conn = new mysqli($servername, $username, $password, $dbname);
     include('conexao.php');
-    // Verifica se a conexão foi bem-sucedida
     if ($conn->connect_error) {
         die("Falha na conexão com o banco de dados: " . $conn->connect_error);
     }
@@ -133,12 +130,10 @@
 
     <?php
 if (isset($_POST['btncad'])) {
-    // Processa os dados do formulário.
     $user = $_POST["usuario"];
     $email = $_POST["email"];
     $senha = $_POST["senha"];
 
-    // Insere os dados no banco de dados
     $sql = "INSERT INTO usuario (usuario, senha, email, acertos, erros)
             VALUES ('$user', '$senha', '$email', 0, 0)";
 
@@ -150,7 +145,6 @@ if (isset($_POST['btncad'])) {
         echo "Erro ao inserir dados: " . $conn->error;
     }
 
-    // Fecha a conexão com o banco de dados
     $conn->close();
 }
     ?>

@@ -9,7 +9,6 @@ $resultUserId = mysqli_query($conn, $sqlUserId);
 $rowUserId = mysqli_fetch_assoc($resultUserId);
 $userId = $rowUserId['iduser'];
 
-// Consulta SQL para obter os dados do usuário
 $sqlUserData = "SELECT * FROM usuario WHERE iduser = $userId";
 $resultUserData = mysqli_query($conn, $sqlUserData);
 $rowUserData = mysqli_fetch_assoc($resultUserData);
@@ -18,12 +17,10 @@ date_default_timezone_set('America/Sao_Paulo');
 $dataAtual = new DateTime();
 $formattedDate = $dataAtual->format('Y-m-d H:i');
 
-// Inicializa as variáveis
 $mensagem = "";
 $selectedOption = "";
 $row = array();
 
-// Verifica se o formulário foi submetido
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $selectedOption = $_POST["resposta"];
     $idQuestao = $_POST["id_questao"];
@@ -46,14 +43,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $mensagem = "Resposta correta!";
                 $userId = $rowUserId['iduser'];
                 $query = "UPDATE usuario SET acertos = acertos + 1 WHERE iduser = $userId";
-                $resultado = 1; // Correct
+                $resultado = 1; 
             } else {
                 $mensagem = "Você errou. A resposta correta é " . $respostaCorreta . "° alternativa ";
                 $query = "UPDATE usuario SET erros = erros + 1 WHERE iduser = $userId";
-                $resultado = 0; // Incorrect
+                $resultado = 0; 
             }
             if ($conn->query($query) === TRUE) {
-                $formattedDateTime = $dataAtual->format('Y-m-d H:i:s'); // Format datetime with seconds
+                $formattedDateTime = $dataAtual->format('Y-m-d H:i:s'); 
                 $insertQuery = "INSERT INTO resultado (codusuario, codquest, data_hora, resposta) VALUES ($userId, $idQuestao, '$formattedDateTime', $resultado)";
                 if ($conn->query($insertQuery) === TRUE) {
                 } else {

@@ -9,8 +9,8 @@ if (isset($_SESSION['email']) && isset($_SESSION['senha'])) {
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc(); // Recuperar a linha do resultado
-        $nomeUsuario = $row['usuario']; // Obtém o nome do usuário
+        $row = $result->fetch_assoc(); 
+        $nomeUsuario = $row['usuario']; 
     } else {
         echo "Usuário não encontrado";
     }

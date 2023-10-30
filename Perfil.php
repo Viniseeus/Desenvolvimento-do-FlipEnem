@@ -9,12 +9,10 @@ $resultUserId = mysqli_query($conn, $sqlUserId);
 $rowUserId = mysqli_fetch_assoc($resultUserId);
 $userId = $rowUserId['iduser'];
 
-// Consulta SQL para obter os dados do usuário
 $sqlUserData = "SELECT * FROM usuario WHERE iduser = $userId";
 $resultUserData = mysqli_query($conn, $sqlUserData);
 $rowUserData = mysqli_fetch_assoc($resultUserData);
 
-// Dados do usuário para preencher o gráfico
 $userData = array(
     'acertos' => $rowUserData['acertos'],
     'erros' => $rowUserData['erros']
@@ -102,6 +100,12 @@ $userData = array(
             background-color: #00abf0;
             text-align: center;
         }
+        .teste{
+            margin-top:20px;
+        }
+        .botao{
+            margin-top:5px;
+        }
     </style>
 </head>
 
@@ -136,7 +140,7 @@ $userData = array(
                 <div class="row">
                     <div class="col-md-6 principal user-info" style="background-color: rgba(0, 0, 0, 0.5); padding: 20px;">
                         <h1 class="botaovoltar"><a href="index.php"><i class="bi bi-arrow-left"></i> Voltar</a></h1>
-                        <?php
+                       <div class="teste"> <?php
                         if (!empty($rowUserData['imagem'])) {
                             echo "<img src='userimage/" . $rowUserData['imagem'] . "' class='foto profile-image' alt='Foto de Perfil'><br>";
                         } else {
@@ -154,10 +158,10 @@ $userData = array(
                         $datanasc = ($rowUserData['datanasc'] === null || $rowUserData['datanasc'] === "1970-01-01") ? "Data não informada" : date('d/m/Y', strtotime($rowUserData['datanasc']));
                         echo "Data de nascimento: " . $datanasc . "<br>";
 
-                        echo "<a href='editaruser.php' class='btn btn-primary'>Editar Perfil</a>";
+                        echo "<a href='editaruser.php' class='btn btn-primary botao'>Editar Perfil</a>";
 
 
-                        ?>
+                        ?></div>
                     </div>
                     <div class="col-md-6 principal" style="background-color: rgba(0, 0, 0, 0.5); padding: 20px;">
                         <div class="chart-container">

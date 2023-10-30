@@ -18,12 +18,10 @@ $resultUserADM = mysqli_query($conn, $sqlUserADM);
 $rowUserADM = mysqli_fetch_assoc($resultUserADM);
 $admStatus = $rowUserADM['ADM'];
 
-// Consulta SQL para obter os dados do usuário
 $sqlUserData = "SELECT acertos, erros FROM usuario WHERE iduser = $userId";
 $resultUserData = mysqli_query($conn, $sqlUserData);
 $rowUserData = mysqli_fetch_assoc($resultUserData);
 
-// Dados do usuário para preencher o gráfico
 $userData = array(
     'acertos' => $rowUserData['acertos'],
     'erros' => $rowUserData['erros']
@@ -77,6 +75,11 @@ $userData = array(
         .corbt {
             background-color: #00abf0;
         }
+        .jogar{
+            font-size: 25pt;
+            border-radius:15px;
+        }
+        
     </style>
 </head>
 
@@ -138,14 +141,13 @@ $userData = array(
 
     <section class="home">
         <div class="home-content container text-center text-md-start p-4">
-            <!-- Conteúdo à esquerda -->
             <div class="row">
                 <div class="col-md-6">
                     <h1 class="display-4">Seja bem-vindo ao FlipEnem!</h1>
                     <p class="lead">Uma maneira mais divertida de estudar para o Enem.</p>
-                    <h3>Bora jogar?</h3>
+                    <h3>Vamos Jogar?</h3>
                     <div class="d-flex justify-content-md-start justify-content-center mt-5">
-                        <a href="jogar.php" class="btn btn-primary me-2">Jogar</a>
+                        <a href="jogar.php" class="btn btn-primary me-2 jogar">Jogar</a>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -157,17 +159,13 @@ $userData = array(
                     </div>
                 </div>
                 <script>
-                    // Dados do usuário recuperados do PHP
                     var userData = <?php echo json_encode($userData); ?>;
 
-                    // Verificar se há dados suficientes para construir o gráfico
                     var hasData = userData.acertos !== null && userData.erros !== null;
 
-                    // Obter o contexto do gráfico
                     var ctx = document.getElementById('chart').getContext('2d');
 
                     if (hasData) {
-                        // Construir o gráfico com os dados do usuário
                         var myChart = new Chart(ctx, {
                             type: 'bar',
                             data: {
@@ -187,7 +185,6 @@ $userData = array(
                             }
                         });
                     } else {
-                        // Mostrar o gráfico com dados insuficientes
                         var myChart = new Chart(ctx, {
                             type: 'bar',
                             data: {

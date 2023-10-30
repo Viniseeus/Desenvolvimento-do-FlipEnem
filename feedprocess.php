@@ -23,7 +23,6 @@ if (isset($_SESSION['email'])) {
             $feedback = $_POST['feedback'];
             $data = date('Y-m-d');
 
-            // Insira as informações na tabela feed
             $sql = "INSERT INTO feed (Iduser, nomeuser, feedback, datafeed) VALUES ('$iduser', '$nomeuser', '$feedback', '$data')";
 
             if (mysqli_query($conn, $sql)) {

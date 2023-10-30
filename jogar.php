@@ -13,7 +13,6 @@ $resultUserId = mysqli_query($conn, $sqlUserId);
 $rowUserId = mysqli_fetch_assoc($resultUserId);
 $userId = $rowUserId['iduser'];
 
-// Consulta SQL para obter os dados do usuário
 $sqlUserData = "SELECT * FROM usuario WHERE iduser = $userId";
 $resultUserData = mysqli_query($conn, $sqlUserData);
 $rowUserData = mysqli_fetch_assoc($resultUserData);
@@ -34,7 +33,7 @@ $numAttempts = $rowAttempts['resposta'];
 
 if ($numAttempts >= 3) {
     echo '<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; text-align: center; background-color: #081b29; color: white;">
-    <h1>Você já atingiu o limite de tentativas para hoje.</h1>        
+    <h1>Você já atingiu o limite de tentativas diárias.</h1>        
      <div class="foto">
             <img src="iconflipenem.png" width="200vh">
         </div></div>';
@@ -167,7 +166,6 @@ ORDER BY RAND() LIMIT 1";
             </div>
             <script src="script.js"></script>
     <?php
-            // Verificando se a resposta do usuário está correta
             $resposta = $row['resultado'];
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $selectedOption = $_POST["resposta"];

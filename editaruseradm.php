@@ -76,7 +76,6 @@
         }
     } else {
         echo "Sessão de email não encontrada. Faça login primeiro.";
-        // Você pode adicionar um redirecionamento para a página de login aqui
     }
 
     mysqli_close($conn);

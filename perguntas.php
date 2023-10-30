@@ -36,8 +36,6 @@ if (isset($_POST['btnCadastrar'])) {
     $observacao = $_POST["observacao"];
     $areaquest = $_POST["areaquest"];
 
-
-    // Faz o upload da imagem
     $target_dir = "uploads/";
     $target_file = $target_dir . basename($_FILES["img"]["name"]);
     move_uploaded_file($_FILES["img"]["tmp_name"], $target_file);

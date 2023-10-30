@@ -54,7 +54,6 @@
             transition: 0.5s;
         }
 
-        /* Estilos para centralizar a paginação */
         .pagination-container {
             display: flex;
             justify-content: center;
@@ -71,28 +70,22 @@
                 <div class="row">
                     <div class="col-12 principal">
                         <h1 class="botaovoltar"><a href="index.php"><i class="bi bi-arrow-left"></i> Voltar</a></h1>
-                        <!-- Exibir o histórico das respostas do usuário -->
                         <?php
                         session_start();
                         include('conexao.php');
 
-                        // Recuperar o código do usuário com base na sessão de e-mail
                         $email = $_SESSION['email'];
                         $sqlUserId = "SELECT iduser FROM usuario WHERE email = '$email'";
                         $resultUserId = mysqli_query($conn, $sqlUserId);
                         $rowUserId = mysqli_fetch_assoc($resultUserId);
                         $userId = $rowUserId['iduser'];
 
-                        // Definir o número de registros por página
                         $registrosPorPagina = 7;
 
-                        // Determinar a página atual
                         $pagina = isset($_GET['page']) ? $_GET['page'] : 1;
 
-                        // Calcular o início da seleção de registros
                         $inicio = ($pagina - 1) * $registrosPorPagina;
 
-                        // Consulta SQL para obter o histórico de respostas do usuário
                         $sqlHistorico = "SELECT data_hora, resposta 
                         FROM resultado 
                         WHERE codusuario = $userId 
@@ -114,7 +107,6 @@
                                 $data_hora = date('d/m/Y H:i:s', strtotime($rowHistorico['data_hora']));
                                 $resposta = $rowHistorico['resposta'];
                                 
-                                // Definir a cor com base na resposta (0 vermelho, 1 verde)
                                 $cor = $resposta == 0 ? 'red' : 'green';
                                 $resultado = $resposta == 0 ? 'Errou' : 'Acertou';
                                 
@@ -127,7 +119,6 @@
                             echo '</tbody>';
                             echo '</table>';
 
-                            // Paginação
                             $sqlTotalRegistros = "SELECT COUNT(*) as total FROM resultado WHERE codusuario = $userId";
                             $resultTotalRegistros = mysqli_query($conn, $sqlTotalRegistros);
                             $rowTotalRegistros = mysqli_fetch_assoc($resultTotalRegistros);
@@ -135,7 +126,6 @@
 
                             $totalPaginas = ceil($totalRegistros / $registrosPorPagina);
 
-                            // Exibir links para navegar entre as páginas
                             echo '<div class="pagination-container">';
                             echo '<ul class="pagination">';
                             for ($i = 1; $i <= $totalPaginas; $i++) {
