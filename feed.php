@@ -1,3 +1,32 @@
+
+
+<?php
+session_start();
+include_once('conexao.php');
+require('valida_login.php');
+
+$usuario = 'nome_de_usuario';
+
+$sql = "SELECT ADM FROM usuario WHERE email = '$email'";
+
+$result = $conn->query($sql);
+
+if ($result) {
+    $row = $result->fetch_assoc();
+
+    $adm = $row['ADM'];
+
+    if ($adm == 0) {
+    } elseif ($adm == 1) {
+
+        $feedback_query = "SELECT feedback, datafeed, iduser, nomeuser FROM feed";
+        $feedback_result = $conn->query($feedback_query);
+    }
+} else {
+    echo "Erro na consulta: " . $conn->error;
+}
+$conn->close();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,31 +80,77 @@
             color: #00abf0;
             transition:0.5s;
         }
-        
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #00abf0;
+            color: white;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #d4d4d4;
+        }
+
+        .cor {
+            color:#000; 
+        }
+        .cor2 {
+            color:white; 
+        }
     </style>
 </head>
 <body>
-    
-    <div class="container-fluid">
+<div class="container-fluid">
     <div class="row">
-            <div class="col-1 col-sm-1 lateral"></div>
-                <div class="col-10 com-sm-10 centro">
-                     <h1 class="feed">Feedback</h1>
+        <div class="col-1 col-sm-1 lateral"></div>
+        <div class="col-10 com-sm-10 centro">
+            <h1 class="feed">Feedback</h1>
+            <div class="row">
+                <div class="col-12 col-sm-12 principal">
+                    <h1 class="botaovoltar"><a href="index.php"><i class="bi bi-arrow-left"></i> Voltar</a></h1>
                     
-                <div class="row">
-                    <div class="col-12 col-sm-12 principal">
-                    <h1 class="botaovoltar"><a href="index.php "><i class="bi bi-arrow-left"></i> Voltar</a></h1>
-                <form method="POST" action="feedprocess.php">
-                    <h1 class="feed">Deixe seu feed: <input name="feedback" type="text-area" placeholder=" . . ." required>
-                        
-                        <input type="submit" value="Enviar"></h1> 
-                </form>
-                        <p>Dúvidas, reclamações, agradecimentos ou dicas de aprimoramentos serão bem vindas ! </p>
-                    </div>
+                    <?php
+                    if ($adm == 0) {
+                    ?>
+                    <form method="POST" action="feedprocess.php">
+                        <h1 class="feed">Deixe seu feedback: <input name="feedback" type="text" placeholder=" . . ." required>
+                            <input type="submit" value="Enviar"></h1>
+                    </form>
+                    <p>Dúvidas, reclamações, agradecimentos ou dicas de aprimoramentos serão bem vindas ! </p>
+                    
+                    <?php
+                    } elseif ($adm == 1) {
+                        if ($feedback_result->num_rows > 0) {
+                            echo "<h1 class='cor2'>Feedbacks dos Usuários:</h1>";
+                            echo "<table>";
+                            echo "<tr><th>ID</th><th>Nome do Usuário</th><th>Data do Feedback</th><th>Feedback</th></tr>";
+                            while ($row = $feedback_result->fetch_assoc()) {
+                                echo "<tr><td>" . $row['iduser'] . "</td><td>" . $row['nomeuser'] . "</td><td>" . $row['datafeed'] . "</td><td>" . $row['feedback'] . "</td></tr>";
+                            }
+                            echo "</table>";
+                        } else {
+                            echo "Nenhum feedback de usuário encontrado.";
+                        }
+                    }
+                    ?>
                 </div>
-                </div>   
-            <div class="col-1 col-sm-1 lateral"></div>           
+            </div>
+        </div>
+        <div class="col-1 col-sm-1 lateral"></div>
     </div>
-    </div>
+</div>
 </body>
 </html>
